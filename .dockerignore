@@ -1,0 +1,11 @@
+# Ignore everything
+**
+
+# Add in what we want
+
+!/src/*
+!/main.py
+!/README.md
+!/VERSION
+!/pyproject.toml
+!/uv.lock

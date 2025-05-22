@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from app.models import Note, notes
 
-app = FastAPI()
+api = FastAPI()
 
 # endpoint to test server health
-@app.get(
+@api.get(
     "/health",
     responses={
         400: {"description": "Bad Request"},
@@ -15,16 +15,16 @@ app = FastAPI()
     },
 )
 
-@app.get("/notes")
+@api.get("/notes")
 def get_notes():
     return notes
 
-@app.post("/notes")
+@api.post("/notes")
 def create_note(note: Note):
     notes.append(note)
     return {"message": "Note added."}
 
-@app.delete("/notes/{index}")
+@api.delete("/notes/{index}")
 def delete_note(index: int):
     if 0 <= index < len(notes):
         notes.pop(index)
