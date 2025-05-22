@@ -18,6 +18,11 @@ If pulling packages from a private repo, you will need a ~/.netrc file with the 
     password PERSONAL_ACCESS_TOKEN
     ```
 
+## Running locally
+```bash
+uv run app
+```
+
 ## Updating the lock file
 
 ```bash
