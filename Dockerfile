@@ -9,7 +9,7 @@ WORKDIR /project
 
 # Install python dependencies
 RUN \
-    --mount=type=secret,id=NETRC,target=/root/.netrc \
+    # --mount=type=secret,id=NETRC,target=/root/.netrc \
     --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=uv.lock,target=uv.lock \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
@@ -23,7 +23,7 @@ ENV PATH="/project/.venv/bin:$PATH"
 COPY . ./
 
 RUN \
-    --mount=type=secret,id=NETRC,target=/root/.netrc \
+    # --mount=type=secret,id=NETRC,target=/root/.netrc \
     --mount=type=cache,target=/root/.cache/uv \
     --mount=type=bind,source=uv.lock,target=uv.lock \
     --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
